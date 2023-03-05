@@ -4,5 +4,7 @@
     <h2><%= post.title %></h2>
     <%= image_tag post.image.url %>
     <p><%= post.content %></p>
+
+    <%= paginate @posts %>
   </div>
 <% end %>
