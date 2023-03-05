@@ -1,0 +1,16 @@
+<h1>投稿の編集</h1>
+
+<%= form_with model: @post, local: true do |form| %>
+  <%= form.label :title %><br>
+  <%= form.text_field :title %><br>
+
+  <%= form.label :content %><br>
+  <%= form.text_area :content %><br>
+
+  <%= form.label :image %><br>
+  <%= form.file_field :image %><br>
+
+  <%= form.submit "更新する" %>
+<% end %>
+
+<%= link_to '戻る', post_path(@post) %>

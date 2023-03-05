@@ -1,0 +1,6 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<% if @post.image.present? %>
+  <%= image_tag @post.image.url %>
+<% end %>
+<p><%= link_to "一覧に戻る", posts_path %></p>

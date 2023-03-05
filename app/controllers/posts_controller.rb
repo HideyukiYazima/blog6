@@ -3,6 +3,20 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path, notice: '投稿が削除されました。'
+  end
+
   def create
     @post = Post.new(post_params)
     @post.image = params[:post][:image] # 追加するコード
