@@ -2,6 +2,15 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.order(created_at: :desc).page(params[:page]) 
     # kaminariのpageメソッドを使ってページネーションを設定
+
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
+    # コントローラーに検索用のアクションを追加する(ransack)
+  end
+
+  def search
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
   end
 
   def show

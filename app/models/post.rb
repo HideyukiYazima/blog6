@@ -3,5 +3,8 @@ class Post < ApplicationRecord
 
   # ページネーション機能を有効化するために、kaminariを設定する
   paginates_per 10
+
+  scope :search_title, ->(title) { where('title LIKE ?', "%#{title}%") }
+  scope :search_content, ->(content) { where('content LIKE ?', "%#{content}%") }
   
 end

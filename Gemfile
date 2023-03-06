@@ -7,6 +7,8 @@ gem 'carrierwave', '~> 2.2'
 
 gem 'kaminari'
 
+gem 'ransack'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.2'
