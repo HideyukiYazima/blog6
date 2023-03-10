@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get "/" => "posts#index"
 
 
-
+  resources :posts
   get 'search', to: 'posts#search', as: 'search_posts'
 end
