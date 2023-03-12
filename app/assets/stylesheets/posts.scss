@@ -1,3 +1,17 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+  color: red;
+  font-size: 24px;
+}
+
+.post-image {
+  max-width: 500px;
+  max-height: 500px;
+}
+.post-image-custom {
+  border: 1px solid #ccc;
+  padding: 10px;
+}

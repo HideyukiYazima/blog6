@@ -7,4 +7,6 @@ class Post < ApplicationRecord
   scope :search_title, ->(title) { where('title LIKE ?', "%#{title}%") }
   scope :search_content, ->(content) { where('content LIKE ?', "%#{content}%") }
   
+  validates :image, presence: true
+
 end
