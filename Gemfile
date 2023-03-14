@@ -9,6 +9,8 @@ gem 'kaminari'
 
 gem 'ransack'
 
+gem 'bcrypt'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.2'

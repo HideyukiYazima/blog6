@@ -1,0 +1,11 @@
+<h1>Users#create</h1>
+<p>Find me in app/views/users/create.html.erb</p>
+
+<h2>ユーザー登録が完了しました！</h2>
+<p>以下の情報で登録が完了しました。</p>
+<ul>
+  <li><strong>名前:</strong> <%= @user.name %></li>
+  <li><strong>メールアドレス:</strong> <%= @user.email %></li>
+</ul>
+<p><%= link_to 'ログインする', login_path %></p>
+
