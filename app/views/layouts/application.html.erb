@@ -11,10 +11,22 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-<header>
-
-</header>
   <body>
+    <header>
+    <div class="header-logo">
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= form_tag posts_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "検索" %>
+        <%= submit_tag "検索" %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to "Post一覧", posts_path %>
+      </li>
+    </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
