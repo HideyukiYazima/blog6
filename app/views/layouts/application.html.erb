@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Blog6</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Blog6</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+</head>
   <body>
+    <header>
+    <div class="header-logo">
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= form_tag posts_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "検索" %>
+        <%= submit_tag "検索" %>
+      </li>
+      <% end %>
+      <li>
+        <%= link_to "Post一覧", posts_path %>
+      </li>
+    </ul>
+    </header>
     <%= yield %>
   </body>
 </html>

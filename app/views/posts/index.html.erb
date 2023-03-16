@@ -1,8 +1,11 @@
 <%= stylesheet_link_tag 'posts' %>
-<h1>Blog Posts</h1>
-<% @posts.each do |post| %>
-  <div>
-    <%= link_to "検索", search_posts_path %>
+<div class="main posts-index">
+  <div class="container">
+    <h1>Blog Posts</h1>
+      <% @posts.each do |post| %>
+        <div class="posts-index-item">
+          <div class="post-left">
+    
     
     <h2><%= post.title %></h2>
     <div class="post-image">
