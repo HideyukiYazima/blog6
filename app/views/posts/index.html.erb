@@ -2,20 +2,24 @@
 <div class="main posts-index">
   <div class="container">
     <h1>Blog Posts</h1>
-      <% @posts.each do |post| %>
-        <div class="posts-index-item">
-          <div class="post-left">
-    
-    
-    <h2><%= post.title %></h2>
-    <div class="post-image">
-     <%= image_tag post.image.url %>
-    <p><%= post.content %></p>
-    </div>
-
-    <p><%= link_to 'Edit', edit_post_path(post) %></p>
-    <p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% @posts.each do |post| %>
+      <div class="posts-index-item">
+        <div class="post-left">
+          <%= post.title %>
+            <div class="post-image">
+            <%= link_to(post.user.name, "/users/#{post.user.id}") %>
+            </div>
+          <%= link_to(post.content, "/posts/#{post.id}") %>
+        </div>
+        <%= image_tag post.image.url %>
+      </div>
   </div>
+
+
+
+  <p><%= link_to 'Edit', edit_post_path(post) %></p>
+  <p><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+</div>
 <% end %>
 
 <%= link_to 'New Post', new_post_path %>
