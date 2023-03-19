@@ -1,4 +1,8 @@
-<h1>投稿の編集</h1>
+<div class="main posts-new">
+  <div class="container">
+
+
+<h1 class="form-heading">投稿の編集</h1>
 
 <%= form_with model: @post, local: true do |form| %>
   <%= form.label :title %><br>
@@ -12,5 +16,6 @@
 
   <%= form.submit "更新する" %>
 <% end %>
-
+  </div>
+</div>
 <%= link_to '戻る', post_path(@post) %>
