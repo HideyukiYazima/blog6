@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   get 'users/create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get "/" => "posts#index"
+  get "posts/index" => "posts#index"
 
   get "posts/:id" => "posts#show"
 
-  get "home/top" => "home#top"
+  get "/" => "home#top"
 
 
   resources :posts
